@@ -1,0 +1,21 @@
+module DFlipFlop(
+	input clk,
+	input D,
+	input reset,
+	output reg [18:0] Q
+);
+
+	always @ (posedge clk or negedge reset)
+	begin
+	
+		if (reset==0)
+		begin
+			  Q <= 1'b0;
+		end
+		else begin
+			  Q <= D;
+		end
+		
+	end
+
+endmodule
